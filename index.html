@@ -4,34 +4,28 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="H1lTb7bdJuzbW5T9vH3hfQ9QZb9zYrbDcTfapYIgQpU">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="五元机场：稳定、便捷的一站式订阅服务。">
-  <meta name="theme-color" content="#0b1220">
-  <title>五元机场｜稳定、便捷的订阅服务</title>
+  <title>五元机场订阅更新、节点选择与排查说明</title>
+  <meta name="description" content="五元机场订阅维护说明：如何更新订阅、按网络环境选择配置，以及遇到连接问题时的基础排查顺序。">
+  <link rel="canonical" href="https://qwuwe23.github.io/5Airport/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="五元机场订阅更新、节点选择与排查说明">
+  <meta property="og:description" content="更新订阅、选择配置与处理常见连接问题的实用步骤。">
+  <meta property="og:url" content="https://qwuwe23.github.io/5Airport/">
+  <meta property="og:site_name" content="五元机场">
+  <meta name="theme-color" content="#11152b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"五元机场订阅更新、节点选择与排查说明","description":"五元机场客户端订阅更新、配置选择和基础排查说明。","url":"https://qwuwe23.github.io/5Airport/","inLanguage":"zh-CN","publisher":{"@type":"Organization","name":"五元机场","url":"https://www.5airport.uk/"}}</script>
   <style>
-    :root { --bg:#0b1220; --panel:rgba(16,35,67,.72); --text:#eef5ff; --muted:#aebdd3; --line:rgba(194,216,255,.15); --brand:#67e8f9; --brand-2:#a78bfa; --accent:#86efac; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); line-height:1.65; }
-    a { color:inherit; text-decoration:none; }
-    .hero { position:relative; overflow:hidden; min-height:700px; background:radial-gradient(circle at 17% 13%,rgba(86,214,255,.22),transparent 34%),radial-gradient(circle at 83% 18%,rgba(131,117,255,.22),transparent 30%),linear-gradient(135deg,#061125 0%,#172554 55%,#312e81 100%); }
-    .hero::before { content:""; position:absolute; inset:0; opacity:.28; background-image:linear-gradient(rgba(176,209,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(176,209,255,.12) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,black,transparent 88%); }
-    .wrap { width:min(1120px,calc(100% - 40px)); margin:0 auto; position:relative; }
-    nav { height:84px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { font-size:20px; font-weight:800; letter-spacing:.08em; }
-    .brand i { display:inline-grid; place-items:center; width:30px; height:30px; margin-right:8px; border-radius:10px; color:#0b1220; font-style:normal; background:linear-gradient(135deg,var(--brand),#cffafe); }
-    .nav-link { display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:0 14px; border:1px solid var(--line); border-radius:10px; color:var(--muted); font-size:14px; font-weight:700; transition:transform .2s,background .2s; }
-    .nav-link:hover { transform:translateY(-1px); background:rgba(255,255,255,.055); }
-    .hero-content { display:grid; grid-template-columns:1.12fr .88fr; gap:62px; align-items:center; padding:90px 0 126px; }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border:1px solid rgba(86,214,255,.32); border-radius:99px; color:#cffafe; font-size:13px; background:rgba(86,214,255,.08); }
-    .dot { width:7px; height:7px; border-radius:50%; background:#86efac; box-shadow:0 0 0 5px rgba(117,240,191,.13); }
-    h1 { margin:20px 0 18px; font-size:clamp(40px,6vw,68px); letter-spacing:-.055em; line-height:1.13; }
-    h1 span { color:var(--brand); }
-    .lead { max-width:610px; margin:0; color:var(--muted); font-size:18px; }
-    .actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:32px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 21px; border:1px solid var(--line); border-radius:12px; font-weight:700; transition:transform .2s,background .2s; }
-    .button:hover { transform:translateY(-2px); }
-    .button.primary { color:#04101f; border-color:transparent; background:linear-gradient(135deg,#67e8f9,#c4b5fd); box-shadow:0 12px 35px rgba(86,214,255,.2); }
-    .button.secondary { color:#dcecff; background:rgba(255,255,255,.055); }
-    .note { margin-top:17px; color:#8090aa; font-size:12px; }
-    .terminal { position:relative; border:1px solid rgba(170,204,255,.24); border-radius:19px; overflow:hidden; background:linear-gradient(145deg,rgba(25,50,90,.72),rgba(10,22,46,.78)); box-shadow:0 28px 70px rgba(0,0,0,.26); }
-    .terminal-head { display:flex; align-items:center; gap:7px; height:48px; padding:0 17px; border-bottom:1px solid var(--line); color:#99acce; font-size:12px; }
+    :root{--bg:#0c1124;--panel:#171f42;--line:#35416f;--text:#f2f4ff;--muted:#bdc6e8;--accent:#7ee7ff;--accent2:#b29bff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 3%,#273678,transparent 33%),radial-gradient(circle at 90% 16%,#382b72,transparent 29%),var(--bg);color:var(--text);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1010px,calc(100% - 40px));margin:auto}.top{padding:22px 0;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:850;font-size:19px}.brand b{color:var(--accent)}.top span{font-size:13px;color:var(--muted)}.hero{text-align:center;padding:70px 0 44px;max-width:810px;margin:auto}.eyebrow{font-size:14px;color:var(--accent);font-weight:750;letter-spacing:.05em}h1{font-size:clamp(34px,6vw,59px);line-height:1.16;letter-spacing:-.04em;margin:13px 0 18px}h2{font-size:24px;line-height:1.3;margin:0 0 10px}p{margin:0 0 13px;color:var(--muted)}.btn{display:inline-flex;padding:12px 19px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#09102a;font-weight:850;margin-top:12px}.flow{padding:18px 0 58px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(32,43,91,.9),rgba(18,25,58,.95));border-radius:18px;padding:25px}.card .k{color:var(--accent);font-weight:850;font-size:14px;margin-bottom:12px}.faq{padding:45px 0 54px;border-top:1px solid rgba(177,196,255,.2);display:grid;grid-template-columns:1fr 1fr;gap:16px}.answer{padding:20px;border-radius:14px;background:rgba(255,255,255,.045)}.answer h2{font-size:19px}.check{padding:42px 0;border-top:1px solid rgba(177,196,255,.2);max-width:760px}.check ol{padding-left:22px;color:var(--muted)}.check li{padding-left:4px;margin:8px 0}.fine{padding:27px 0 45px;border-top:1px solid rgba(177,196,255,.2);font-size:13px}@media(max-width:650px){.flow,.faq{grid-template-columns:1fr}.hero{padding-top:45px}.top span{display:none}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="top" aria-label="主导航"><a class="brand" href="https://www.5airport.uk/">五元<b>机场</b></a><span>订阅维护与使用说明</span></nav>
+    <header class="hero"><p class="eyebrow">订阅更新 · 配置选择 · 基础排查</p><h1>让订阅保持最新，<br>从正确的更新顺序开始。</h1><p>配置列表和网络状况会变化。养成“更新订阅后再选择配置”的习惯，可以减少因为旧信息或设备设置造成的困扰。</p><a class="btn" href="https://www.5airport.uk/">进入五元机场订阅中心</a></header>
+    <section class="flow" aria-label="维护流程"><article class="card"><p class="k">更新</p><h2>先刷新订阅</h2><p>在客户端使用订阅更新功能，让本地配置与面板当前内容保持一致。更新完成后再查看列表是否出现变化。</p></article><article class="card"><p class="k">选择</p><h2>按当前网络尝试</h2><p>网络环境会影响连接表现。可从列表中选择合适的配置进行尝试；遇到问题时不要只依赖一个旧配置。</p></article><article class="card"><p class="k">检查</p><h2>从基础设置查起</h2><p>确认系统时间正确、客户端处于新版本、网络已授予必要权限，并检查是否启用了影响连接的其他网络工具。</p></article></section>
+    <section class="faq"><article class="answer"><h2>为什么客户端列表没有变化？</h2><p>先确认更新动作已成功完成，检查订阅链接是否完整、账号状态是否正常；随后返回面板查看是否有面向账号的提示。</p></article><article class="answer"><h2>为什么换了配置仍无法连接？</h2><p>先退出并重新打开客户端，再检查设备网络与时间设置。若问题持续，记录客户端提示信息后通过官网提供的渠道咨询。</p></article><article class="answer"><h2>订阅链接可以分享吗？</h2><p>不建议。订阅链接关联个人账号和配置内容，应只在自己的受信任设备中使用；需要新设备时请自行登录面板重新复制。</p></article><article class="answer"><h2>何时需要再次更新？</h2><p>当你更换设备、客户端提示订阅过期、面板信息变化，或长期未刷新配置时，先执行一次更新再继续使用。</p></article></section>
+    <section class="check"><h2>遇到问题时的建议顺序</h2><ol><li>确认账号与套餐状态，并从官网重新获取订阅链接。</li><li>更新客户端内的订阅，等待更新完成后再选择配置。</li><li>检查系统时间、设备网络权限及客户端版本。</li><li>保留客户端报错和必要截图，通过官网的支持入口获取针对性帮助。</li></ol></section>
+    <footer class="fine"><p>本页是维护与排查的基础指南。实际配置、套餐信息与服务规则以五元机场官网和用户面板实时显示为准。</p></footer>
+  </main>
+</body>
+</html>
