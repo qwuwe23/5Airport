@@ -1,0 +1,54 @@
+name: Update Pages health snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-health-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check public Pages endpoint
+        id: probe
+        env:
+          PAGE_URL: https://qwuwe23.github.io/5Airport/
+        run: |
+          set -euo pipefail
+          body_file="$(mktemp)"
+          trap 'rm -f "$body_file"' EXIT
+          status="$(curl --retry 2 --retry-delay 2 --connect-timeout 10 --max-time 30 \
+            --silent --show-error --location --output "$body_file" --write-out '%{http_code}' \
+            "$PAGE_URL")"
+          test "$status" = "200"
+          title="$(grep -ioE '<title[^>]*>[^<]*</title>' "$body_file" | head -n1 | sed -E 's/<[^>]*>//g' | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | cut -c1-160 || true)"
+          jq -n \
+            --arg checked_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --arg page_url "$PAGE_URL" \
+            --arg page_title "$title" \
+            --argjson http_status "$status" \
+            '{checked_at: $checked_at, page_url: $page_url, http_status: $http_status, page_title: $page_title}' \
+            > status.json
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Commit public health snapshot
+        run: |
+          if git diff --quiet -- status.json; then
+            echo "No snapshot changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add status.json
+          git commit -m "chore: refresh public health snapshot"
+          git push
