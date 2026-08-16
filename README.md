@@ -4,8 +4,8 @@
 
 目前同类里性价比直接拉满的选择。
 
-[立即注册](https://www.xn--dlq48d5zhdss.top/#/register)
-[登录用户中心](https://www.xn--dlq48d5zhdss.top/#/login)
+[立即注册](https://www.5airport.uk/#/register)
+[登录用户中心](https://www.5airport.uk/#/login)
 
 ---
 
@@ -50,6 +50,6 @@
 便宜、稳、不限速，1000万内性价比最高的选择之一。
 
 现在就去注册体验：
-👉 [五元机场用户中心](https://www.xn--dlq48d5zhdss.top/)
+👉 [五元机场用户中心](https://www.5airport.uk/)
 
 ---
