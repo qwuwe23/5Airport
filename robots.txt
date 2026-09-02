@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qwuwe23.github.io/5Airport/sitemap.xml
